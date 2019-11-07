@@ -38,6 +38,8 @@ class FAQsController extends Controller
      */
     public function store(Request $request)
     {
+        // $this->authorize('create', FAQ::class);
+        
         $request->validate([
             'question' => 'required',
             'answer' => 'required',
@@ -57,6 +59,8 @@ class FAQsController extends Controller
      */
     public function show(FAQ $faq)
     {
+        $this->authorize('view', $faq);
+        
         return view('faqs.show',compact('faq'));
     }
 
@@ -80,6 +84,8 @@ class FAQsController extends Controller
      */
     public function update(Request $request, FAQ $faq)
     {
+        $this->authorize('update', $faq);
+        
         $request->validate([
             'question' => 'required',
             'answer' => 'required',
@@ -99,6 +105,8 @@ class FAQsController extends Controller
      */
     public function destroy(FAQ $faq)
     {
+        $this->authorize('update', $faq);
+        
         $faq->delete();
   
         return redirect()->route('faqs.index')
