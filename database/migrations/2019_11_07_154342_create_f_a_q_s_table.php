@@ -13,7 +13,7 @@ class CreateFAQSTable extends Migration
      */
     public function up()
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('question');
             $table->string('answer');
@@ -28,6 +28,6 @@ class CreateFAQSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('f_a_q_s');
     }
 }
