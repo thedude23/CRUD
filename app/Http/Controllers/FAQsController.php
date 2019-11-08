@@ -111,6 +111,6 @@ class FAQsController extends Controller
         $faq->delete();
   
         return redirect()->route('faqs.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','FAQ deleted successfully');
     }
 }
