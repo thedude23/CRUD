@@ -51,7 +51,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    Logged in as: <b>{{ Auth::user()->name }}</b> <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -60,6 +60,25 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                            
+                            {{-- Language --}}
+                            {{ $locale = session()->get('locale') }}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    @switch($locale)
+                                        @case('de')
+                                            <img src="{{ asset('img/de.png') }}" width="30px" height="20x"> Deutsch
+                                        @break
+                                        @default
+                                            <img src="{{ asset('img/en.png') }}" width="30px" height="20x"> English
+                                    @endswitch
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="faqs/lang/en"><img src="{{ asset('img/en.png') }}" width="30px" height="20x"> English</a>
+                                    <a class="dropdown-item" href="faqs/lang/de"><img src="{{ asset('img/de.png') }}" width="30px" height="20x"> Deutsch</a>
+                                </div>
+                            </li>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

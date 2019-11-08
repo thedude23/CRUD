@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/faqs','FAQsController');
+// ->setLocale('de');
+
+Route::get('faqs/lang/{locale}', 'LocalizationController@index');

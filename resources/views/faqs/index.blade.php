@@ -7,7 +7,7 @@
                 <h2>CRUD_Laravel</h2>
             </div> --}}
             <div class="pull-right">
-                <a class="btn btn-outline-success mb-3" href="{{ route('faqs.create') }}"> Create New FAQ</a>
+                <a class="btn btn-outline-success mb-3" href="{{ route('faqs.create') }}">{{ __("text.create") }}</a>
             </div>
         </div>
     </div>
@@ -21,8 +21,8 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Question</th>
-            <th>Answer</th>
+            <th>{{ __("text.question") }}</th>
+            <th>{{ __("text.answer") }}</th>
             @can('delete', $faqs) 
                 <th width="280px">Action</th>  {{-- th still not showing for some reason--}}              
             @endcan
@@ -37,18 +37,18 @@
                     <form action="{{ route('faqs.destroy', $faq->id) }}" method="POST">
     
                         @can('view', $faq)
-                            <a class="btn btn-outline-info" href="{{ route('faqs.show', $faq->id) }}">Show</a>
+                            <a class="btn btn-outline-info" href="{{ route('faqs.show', $faq->id) }}">{{ __("text.show") }}</a>
                         @endcan
 
                         @can('update', $faq)
-                            <a class="btn btn-outline-warning" href="{{ route('faqs.edit', $faq->id) }}">Edit</a>
+                            <a class="btn btn-outline-warning" href="{{ route('faqs.edit', $faq->id) }}">{{ __("text.edit") }}</a>
                         @endcan
 
                         @csrf
                         @method('DELETE')
                         
                         @can('delete', $faq)
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            <button type="submit" class="btn btn-outline-danger">{{ __("text.delete") }}</button>
                         @endcan
                     </form>
                 </td>
