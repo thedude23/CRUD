@@ -15,12 +15,18 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
+        <theme-mode>
+            <!-- VUE Thememode component -->
+        </theme-mode>
+        
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/faqs') }}">
@@ -61,7 +67,7 @@
                                         {{ __('Logout') }}
                                     </a>
                             
-                            {{-- Language --}}
+                            <!-- Choosing Language -->
                             {{ $locale = session()->get('locale') }}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -93,7 +99,8 @@
 
         <main class="py-4">
             <div class="container">
-                <div class="col-sm-12">
+                <div class="offset-1 col-sm-10 offset-1">
+                    <!-- Content from views: faqs.index, faqs.show, faqs.edit -->
                     @yield('content')
                 </div>
             </div>

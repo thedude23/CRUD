@@ -2,27 +2,30 @@
 
 @section('content')
     <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show FAQ</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary mb-3" href="{{ route('faqs.index') }}"> Back</a>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="d-flex justify-content-center">
+                <h3 class="d-inline mr-4">Show FAQ</h3>
+                <a class="d-inline btn btn-outline-darkblue" href="{{ route('faqs.index') }}">Back</a>
             </div>
         </div>
     </div>
-   
+
+    <br>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Question:</strong>
-                {{ $faq->question }}
+            <div class="d-flex justify-content-center">
+                <div class="form-group">
+                    <strong>Question:</strong>
+                    {{ $faq->question }}
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Answer:</strong>
-                {{ $faq->answer }}
+            <div class="d-flex justify-content-center">
+                <div class="form-group">
+                    <strong>Answer:</strong>
+                    {{ $faq->answer }}
+                </div>
             </div>
         </div>
     </div>

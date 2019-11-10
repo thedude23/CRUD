@@ -3,11 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            {{-- <div class="pull-left">
-                <h2>CRUD_Laravel</h2>
-            </div> --}}
             <div class="pull-right">
-                <a class="btn btn-outline-success mb-3" href="{{ route('faqs.create') }}">{{ __("text.create") }}</a>
+                <a class="btn btn-outline-darkblue mb-3" href="{{ route('faqs.create') }}">{{ __("text.create") }}</a>
             </div>
         </div>
     </div>
@@ -37,18 +34,18 @@
                     <form action="{{ route('faqs.destroy', $faq->id) }}" method="POST">
     
                         @can('view', $faq)
-                            <a class="btn btn-outline-info" href="{{ route('faqs.show', $faq->id) }}">{{ __("text.show") }}</a>
+                            <a class="btn btn-outline-darkblue ml-2" href="{{ route('faqs.show', $faq->id) }}">{{ __("text.show") }}</a>
                         @endcan
 
                         @can('update', $faq)
-                            <a class="btn btn-outline-warning" href="{{ route('faqs.edit', $faq->id) }}">{{ __("text.edit") }}</a>
+                            <a class="btn btn-outline-darkblue ml-2" href="{{ route('faqs.edit', $faq->id) }}">{{ __("text.edit") }}</a>
                         @endcan
 
                         @csrf
                         @method('DELETE')
                         
                         @can('delete', $faq)
-                            <button type="submit" class="btn btn-outline-danger">{{ __("text.delete") }}</button>
+                            <button type="submit" class="btn btn-outline-darkblue ml-2">{{ __("text.delete") }}</button>
                         @endcan
                     </form>
                 </td>

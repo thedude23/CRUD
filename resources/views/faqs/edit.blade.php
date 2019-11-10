@@ -2,12 +2,10 @@
    
 @section('content')
     <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit FAQ</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('faqs.index') }}"> Back</a>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="d-flex justify-content-center">
+                <h3 class="d-inline mr-4">Edit FAQ</h3>
+                <a class="d-inline btn btn-outline-darkblue" href="{{ route('faqs.index') }}">Back</a>
             </div>
         </div>
     </div>
@@ -42,7 +40,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-outline-primary">Submit</button>
+              <button type="submit" class="btn btn-outline-darkblue">Submit</button>
             </div>
         </div>
    
